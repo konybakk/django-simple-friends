@@ -59,11 +59,12 @@ from django.db import transaction
 from django.views.generic.base import RedirectView
 from django.shortcuts import get_object_or_404
 from django.utils.translation import ugettext
-from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from models import FriendshipRequest, Friendship
 from app_settings import REDIRECT_FALLBACK_TO_PROFILE
 
+from django.contrib.auth import get_user_model
+User = get_user_model()
 
 class BaseActionView(RedirectView):
     """

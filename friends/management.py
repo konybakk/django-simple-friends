@@ -1,8 +1,9 @@
 from django.db.models.signals import post_syncdb
-from django.contrib.auth.models import User
 from django.core.exceptions import ImproperlyConfigured
 import models
 from app_settings import FRIENDS_SYNCDB_BATCH_SIZE
+from django.contrib.auth import get_user_model
+User = get_user_model()
 
 
 def post_syncdb_handler(sender, app, created_models, verbosity, **kwargs):

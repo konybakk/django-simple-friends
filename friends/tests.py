@@ -1,8 +1,9 @@
 from django.test import TestCase
 from django.core.urlresolvers import reverse
-from django.contrib.auth.models import User
 from friends.models import FriendshipRequest, Friendship, UserBlocks
 from friends.templatetags import friends_tags
+from django.contrib.auth import get_user_model
+User = get_user_model()
 
 
 class BaseTestCase(TestCase):
